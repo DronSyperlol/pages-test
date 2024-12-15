@@ -27,6 +27,8 @@ jobs:
       run: |
         touch .env
         echo REACT_APP_SOMEKEY=${{ secrets.REACT_APP_SOMEKEY }} >> .env
+        echo \
+        >> .env
     - name: build
       working-directory: ./my-app
       run: |
