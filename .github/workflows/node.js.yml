@@ -25,7 +25,9 @@ jobs:
       working-directory: ./my-app
       run: |
         npm ci
-        echo ${{ secrets.ENV_FILE }} > .env
+        echo ${{ secrets.ENV_FILE }} | base64
+        touch .env
+        echo ${{ secrets.ENV_FILE }} >> .env
         npm run build
     - name: Upload static files as artifact
       id: deployment
