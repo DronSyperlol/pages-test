@@ -18,6 +18,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <h1>
+          {process.env.REACT_APP_SOMEKEY}
+        </h1>
+      </div>
     </div>
   );
 }

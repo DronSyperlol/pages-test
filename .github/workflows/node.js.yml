@@ -26,11 +26,6 @@ jobs:
       run: |
         npm ci
         echo ${{ secrets.ENV_FILE }} > .env
-        echo ENV_FILE\
-        
-        cat .env | base64
-        echo END ENV_FILE\
-        
         npm run build
     - name: Upload static files as artifact
       id: deployment
