@@ -25,8 +25,7 @@ jobs:
       working-directory: ./my-app
       run: |
         echo ${{ secrets.REACT_APP_ENV }} | base64
-        touch .env
-        echo ${{ secrets.REACT_APP_ENV }} >> .env
+        
     - name: build
       working-directory: ./my-app
       run: |
