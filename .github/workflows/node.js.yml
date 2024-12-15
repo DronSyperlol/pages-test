@@ -11,8 +11,9 @@ on:
 
 jobs:
   build:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js 22
@@ -23,9 +24,7 @@ jobs:
         cache-dependency-path: './my-app'
     - name: Create .env
       working-directory: ./my-app
-      run: |
-        echo ${{ secrets.REACT_APP_ENV }} | base64
-        
+      run: echo ${{ secrets.REACT_APP_ENV }} > .env
     - name: build
       working-directory: ./my-app
       run: |
